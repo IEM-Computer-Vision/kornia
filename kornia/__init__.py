@@ -22,10 +22,18 @@ from kornia.color import (
     bgr_to_grayscale,
     bgr_to_rgb,
     rgb_to_bgr,
+    rgb_to_rgba,
+    bgr_to_rgba,
+    rgba_to_rgb,
+    rgba_to_bgr,
     rgb_to_hsv,
     hsv_to_rgb,
     rgb_to_hls,
+    rgb_to_yuv,
+    yuv_to_rgb,
     hls_to_rgb,
+    rgb_to_ycbcr,
+    ycbcr_to_rgb,
     normalize,
     denormalize,
     adjust_brightness,
@@ -39,8 +47,10 @@ from kornia.contrib import (
     max_blur_pool2d,
 )
 from kornia.feature import (
-    non_maxima_suppression2d,
+    nms2d,
     harris_response,
+    hessian_response,
+    gftt_response,
     SIFTDescriptor
 )
 from kornia.filters import (
@@ -48,12 +58,14 @@ from kornia.filters import (
     get_gaussian_kernel2d,
     get_laplacian_kernel1d,
     get_laplacian_kernel2d,
+    get_motion_kernel2d,
     gaussian_blur2d,
     laplacian,
     sobel,
     spatial_gradient,
     box_blur,
     median_blur,
+    motion_blur,
     filter2D,
 )
 from kornia.losses import (
@@ -62,7 +74,9 @@ from kornia.losses import (
     tversky_loss,
     inverse_depth_smoothness_loss,
     total_variation,
-    psnr_loss
+    psnr_loss,
+    kl_div_loss_2d,
+    js_div_loss_2d,
 )
 from kornia.utils import (
     one_hot,
@@ -74,7 +88,9 @@ from kornia.utils import (
 )
 from kornia.augmentation import (
     random_hflip,
+    random_vflip,
     color_jitter,
+    random_grayscale,
 )
 
 from kornia.geometry import *
